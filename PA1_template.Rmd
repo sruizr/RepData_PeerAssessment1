@@ -10,10 +10,6 @@ output:
 
 
 
-## What is mean total number of steps taken per day?
-
-
-
 ## What is the average daily activity pattern?
 
 
