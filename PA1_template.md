@@ -140,11 +140,11 @@ We introduce to the dataframe *cleanData* a new field called *weekday*. It could
 
 
 ```r
-	wday  <- factor(weekdays(cleanData$date, abbreviate = TRUE)=="dom" | weekdays(cleanData$date, abbreviate = TRUE)=="sáb", levels = c(FALSE, TRUE), labels = c("workingday", "weekend"))
+	wday  <- factor(weekdays(cleanData$date, abbreviate = TRUE)=="dom" | weekdays(cleanData$date, abbreviate = TRUE)=="sáb", levels = c(FALSE, TRUE), labels = c("weekday", "weekend"))
 	cleanData["weekday"]  <- wday
 ```
 
-Recalculate activity for working day & weekend:
+Recalculate activity for weekdays & weekends:
 
 ```r
 	stepsPerInterval  <-  aggregate(cleanData$steps, by = list( cleanData$hour, cleanData$weekday), FUN = mean, na.rm = TRUE)
